@@ -620,7 +620,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: de4ca67c-c772-4173-8706-bc8e37c9e1a2
-  projectName: Skateboarder_temp
+  projectName: Skateboarder
   organizationId: unity_5740235
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

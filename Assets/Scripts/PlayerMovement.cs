@@ -1,30 +1,42 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
     private readonly TouchesProxy touches = new TouchesProxy();
+    private readonly float k = 0.1f;
+    private Rigidbody2D rb;
+    private Vector2 startTouch = new Vector2();
+    private float startTime = 0;
 
-    private readonly Action<Vector2> onTouchBegan = (Vector2 position) => {
-        Debug.Log("Touch began");
-    };
+    private void OnTouchBegan(Vector2 position) {
+        startTouch = position;
+        startTime = Time.time;
+    }
 
-    private readonly Action<Vector2> onTouchMoved = (Vector2 position) => {
-        Debug.Log("Touch moved");
-    };
+    private void OnTouchMoved(Vector2 position) {
+        float velocity;
+        if (rb.velocity.x >= 0) {
+            float distance = position.x - startTouch.x;
+            float time = Time.time - startTime;
+            velocity = distance / time;
+        }
+        else {
+            rb.velocity = new Vector2();
+            velocity = 0;
+        }
+        rb.AddForce(new Vector2(velocity * k, 0), ForceMode2D.Force);
+    }
 
-    private readonly Action onTouchFinished = () => {
-        Debug.Log("Touch finished");
-    };
+    private void OnTouchFinished() {}
 
     // Use this for initialization
     void Start() {
-
+       rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update() {
-        touches.Update(onTouchBegan, onTouchMoved, onTouchFinished);
+        touches.Update(OnTouchBegan, OnTouchMoved, OnTouchFinished);
     }
 
 }

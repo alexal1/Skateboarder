@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     private void OnTouchMoved(Vector2 position) {
         float velocity;
         if (rb.velocity.x >= 0) {
-            float distance = position.x - startTouch.x;
+            float distance = startTouch.x - position.x;
             float time = Time.time - startTime;
             velocity = distance / time;
         }

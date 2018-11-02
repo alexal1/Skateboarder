@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-public class TouchesProxy {
+public class TouchesDelegate {
 
     private readonly Action<Vector2> _onTouchBegan;
     private readonly Action<Vector2> _onTouchMoved;
     private readonly Action _onTouchFinished;
 
-    public TouchesProxy(Action<Vector2> onTouchBegan,
+    public TouchesDelegate(Action<Vector2> onTouchBegan,
                         Action<Vector2> onTouchMoved,
                         Action onTouchFinished) {
         _onTouchBegan = onTouchBegan;

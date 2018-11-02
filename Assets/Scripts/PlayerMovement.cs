@@ -1,53 +1,47 @@
 ﻿using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private readonly TouchesProxy touches = new TouchesProxy();
-    private readonly float k = 0.1f;
-    private Rigidbody2D rb;
-    private Animator animator;
-    private Vector2 startTouch = new Vector2();
-    private float startTime = 0;
-    private bool isAnimationTriggered = false;
-
-    private void OnTouchBegan(Vector2 position) {
-        startTouch = position;
-        startTime = Time.time;
-    }
-
-    private void OnTouchMoved(Vector2 position) {
-        float swipeDistance = startTouch.x - position.x;
-
-        if (swipeDistance > 0 && !isAnimationTriggered) {
-            isAnimationTriggered = true;
-            animator.SetTrigger("Push");
-        }
-
-        float swipeVelocity;
-        if (rb.velocity.x >= 0) {
-            float swipeTime = Time.time - startTime;
-            swipeVelocity = swipeDistance / swipeTime;
-        }
-        else {
-            rb.velocity = new Vector2();
-            swipeVelocity = 0;
-        }
-        rb.AddForce(new Vector2(swipeVelocity * k, 0), ForceMode2D.Force);
-    }
-
-    private void OnTouchFinished() {
-        isAnimationTriggered = false;
-    }
+    private const float HorizontalForceCoefficient = 0.01f;
+    private const float VerticalForceCoefficient = 0.01f;
+    private SwipesDelegate _swipes;
+    private Rigidbody2D _rb;
+    private Animator _animator;
+    private Action _doOnPushed;
 
     // Use this for initialization
-    void Start() {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+    private void Start() {
+        _swipes = new SwipesDelegate(HandleSwipe);
+        _swipes.Start();
+        _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update() {
-        touches.Update(OnTouchBegan, OnTouchMoved, OnTouchFinished);
+    private void Update() {
+        _swipes.Update();
+    }
+
+    private void HandleSwipe(SwipeDirection swipeDirection, float swipeVelocity) {
+        switch (swipeDirection) {
+            case SwipeDirection.Left:
+                _animator.SetTrigger("Push");
+                _doOnPushed = () => {
+                    var horizontalForce = swipeVelocity * HorizontalForceCoefficient;
+                    _rb.AddForce(new Vector2(horizontalForce, 0), ForceMode2D.Impulse);
+                };
+                break;
+
+            case SwipeDirection.Top:
+                var verticalForce = swipeVelocity * VerticalForceCoefficient;
+                _rb.AddForce(new Vector2(0, verticalForce), ForceMode2D.Impulse);
+                break;
+        }
+    }
+
+    public void OnPushed() {
+        _doOnPushed();
     }
 
 }

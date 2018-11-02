@@ -1,0 +1,1 @@
+﻿public enum SwipeType { LEFT, TOP, RIGHT, BOTTOM }

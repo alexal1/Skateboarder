@@ -198,10 +198,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46900289}
   - component: {fileID: 46900290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125568268}
   - component: {fileID: 125568267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 135581842}
   - component: {fileID: 135581841}
   - component: {fileID: 135581843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254125171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 280134292}
   - component: {fileID: 280134291}
   - component: {fileID: 280134290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kicker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298688965}
   - component: {fileID: 298688966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 354730156}
   - component: {fileID: 354730155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sprite18-sheet0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 446618417}
   - component: {fileID: 446618419}
   - component: {fileID: 446618418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 449534054}
   - component: {fileID: 449534053}
   - component: {fileID: 449534055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_face_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 565756686}
   - component: {fileID: 565756688}
   - component: {fileID: 565756687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,7 +1168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585298721}
   - component: {fileID: 585298720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1243,7 +1243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586051871}
   - component: {fileID: 586051872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 611119384}
   - component: {fileID: 611119383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1394,7 @@ GameObject:
   - component: {fileID: 687706089}
   - component: {fileID: 687706091}
   - component: {fileID: 687706090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 689153929}
   - component: {fileID: 689153931}
   - component: {fileID: 689153930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712081519}
   - component: {fileID: 712081518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grass (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 724909915}
   - component: {fileID: 724909917}
   - component: {fileID: 724909916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1772,7 +1772,7 @@ GameObject:
   - component: {fileID: 775275624}
   - component: {fileID: 775275626}
   - component: {fileID: 775275625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,7 +1873,7 @@ GameObject:
   - component: {fileID: 818734248}
   - component: {fileID: 818734247}
   - component: {fileID: 818734246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,7 +1984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 867763188}
   - component: {fileID: 867763187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2060,7 @@ GameObject:
   - component: {fileID: 893719631}
   - component: {fileID: 893719630}
   - component: {fileID: 893719632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2162,7 +2162,7 @@ GameObject:
   - component: {fileID: 902118992}
   - component: {fileID: 902118991}
   - component: {fileID: 902118990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2304,7 +2304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 917635398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2335,7 +2335,7 @@ GameObject:
   - component: {fileID: 953553003}
   - component: {fileID: 953553005}
   - component: {fileID: 953553004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2437,7 +2437,7 @@ GameObject:
   - component: {fileID: 991890312}
   - component: {fileID: 991890311}
   - component: {fileID: 991890310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2567,7 +2567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012801230}
   - component: {fileID: 1012801229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2642,7 +2642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043751511}
   - component: {fileID: 1043751510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2717,7 +2717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058426931}
   - component: {fileID: 1058426930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2793,7 +2793,7 @@ GameObject:
   - component: {fileID: 1115643432}
   - component: {fileID: 1115643431}
   - component: {fileID: 1115643430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2894,7 +2894,7 @@ GameObject:
   - component: {fileID: 1120359576}
   - component: {fileID: 1120359575}
   - component: {fileID: 1120359574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2995,7 +2995,7 @@ GameObject:
   - component: {fileID: 1124587589}
   - component: {fileID: 1124587591}
   - component: {fileID: 1124587590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_face_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3096,7 +3096,7 @@ GameObject:
   - component: {fileID: 1339066874}
   - component: {fileID: 1339066876}
   - component: {fileID: 1339066875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3286,7 +3286,7 @@ GameObject:
   - component: {fileID: 1386635320}
   - component: {fileID: 1386635322}
   - component: {fileID: 1386635321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3387,7 +3387,7 @@ GameObject:
   - component: {fileID: 1431570136}
   - component: {fileID: 1431570138}
   - component: {fileID: 1431570137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3488,7 +3488,7 @@ GameObject:
   - component: {fileID: 1475749516}
   - component: {fileID: 1475749518}
   - component: {fileID: 1475749517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3589,7 +3589,7 @@ GameObject:
   - component: {fileID: 1504167490}
   - component: {fileID: 1504167492}
   - component: {fileID: 1504167491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3690,7 +3690,7 @@ GameObject:
   - component: {fileID: 1602821821}
   - component: {fileID: 1602821820}
   - component: {fileID: 1602821819}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kicker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3795,7 +3795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710405333}
   - component: {fileID: 1710405332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3871,7 +3871,7 @@ GameObject:
   - component: {fileID: 1809463237}
   - component: {fileID: 1809463239}
   - component: {fileID: 1809463238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3972,7 +3972,7 @@ GameObject:
   - component: {fileID: 1810040914}
   - component: {fileID: 1810040913}
   - component: {fileID: 1810040912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4074,7 +4074,7 @@ GameObject:
   - component: {fileID: 1878323486}
   - component: {fileID: 1878323485}
   - component: {fileID: 1878323484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4219,7 +4219,7 @@ GameObject:
   - component: {fileID: 1949816502}
   - component: {fileID: 1949816501}
   - component: {fileID: 1949816500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boom_3_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4425,7 +4425,7 @@ GameObject:
   - component: {fileID: 1978336736}
   - component: {fileID: 1978336735}
   - component: {fileID: 1978336734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4526,7 +4526,7 @@ GameObject:
   - component: {fileID: 1992859953}
   - component: {fileID: 1992859955}
   - component: {fileID: 1992859954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_face_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4627,7 +4627,7 @@ GameObject:
   - component: {fileID: 2117142605}
   - component: {fileID: 2117142607}
   - component: {fileID: 2117142606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: container_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

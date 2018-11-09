@@ -18,8 +18,8 @@ public class CameraMovement : MonoBehaviour {
         Vector3 playerpos = player.position;
         playerpos.z = transform.position.z;
         transform.position = playerpos;
-        Debug.Log(camera.position);
-        Debug.Log(player.position);
-        Debug.Log("----------");
+//        Debug.Log(camera.position);
+//        Debug.Log(player.position);
+//        Debug.Log("----------");
 	}
 }

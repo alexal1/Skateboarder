@@ -5,8 +5,10 @@ public class PlayerMovement : MonoBehaviour {
 
     private const string TriggerPush = "Push";
     private const string TriggerJump = "Jump";
-    private const float HorizontalForceCoefficient = 0.01f;
-    private const float VerticalForceCoefficient = 0.01f;
+    private const float HorizontalForceCoefficient = 0.02f;
+    private const float VerticalForceCoefficient = 0.02f;
+    private const float MaxHorizontalForce = 20f;
+    private const float MaxVerticalForce= 20f;
     private const float Tolerance = 0.0001f;
     private const int GroundLayerMask = 1 << 8;
     private SwipesDelegate _swipes;
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour {
             case SwipeDirection.Left:
                 _animator.SetTrigger(TriggerPush);
                 _doOnPushed = () => {
-                    var horizontalForce = swipeVelocity * HorizontalForceCoefficient;
+                    var horizontalForce = Math.Min(swipeVelocity * HorizontalForceCoefficient, MaxHorizontalForce);
                     _rb.AddForce(new Vector2(horizontalForce, 0), ForceMode2D.Impulse);
                 };
                 break;
@@ -67,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
             case SwipeDirection.Top:
                 _animator.SetTrigger(TriggerJump);
                 _doOnJumped = () => {
-                    var verticalForce = swipeVelocity * VerticalForceCoefficient;
+                    var verticalForce = Math.Min(swipeVelocity * VerticalForceCoefficient, MaxVerticalForce);
                     _rb.AddForce(new Vector2(0, verticalForce), ForceMode2D.Impulse);
                 };
                 break;

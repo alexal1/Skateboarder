@@ -19,6 +19,7 @@
         <e p="Scripts" t="Include">
           <e p="CameraMovement.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="RestartButton.cs" t="Include" />
           <e p="SwipeDirection.cs" t="Include" />
           <e p="SwipesDelegate.cs" t="Include" />
           <e p="TouchesDelegate.cs" t="Include" />

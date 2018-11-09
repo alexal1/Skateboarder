@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Use this for initialization
     private void Start() {
-        _swipes = new SwipesDelegate(HandleSwipe);
+        _swipes = new SwipesDelegate(HandleSwipeStart, HandleSwipeEnd);
         _swipes.Start();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -56,10 +56,21 @@ public class PlayerMovement : MonoBehaviour {
         _animator.SetBool("IsStopped", isStopped);
     }
 
-    private void HandleSwipe(SwipeDirection swipeDirection, float swipeVelocity) {
+    private void HandleSwipeStart(SwipeDirection swipeDirection) {
         switch (swipeDirection) {
             case SwipeDirection.Left:
                 _animator.SetTrigger(TriggerPush);
+                break;
+
+            case SwipeDirection.Top:
+                _animator.SetTrigger(TriggerJump);
+                break;
+        }
+    }
+
+    private void HandleSwipeEnd(SwipeDirection swipeDirection, float swipeVelocity) {
+        switch (swipeDirection) {
+            case SwipeDirection.Left:
                 _doOnPushed = () => {
                     var horizontalForce = Math.Min(swipeVelocity * HorizontalForceCoefficient, MaxHorizontalForce);
                     _rb.AddForce(new Vector2(horizontalForce, 0), ForceMode2D.Impulse);
@@ -67,7 +78,6 @@ public class PlayerMovement : MonoBehaviour {
                 break;
 
             case SwipeDirection.Top:
-                _animator.SetTrigger(TriggerJump);
                 _doOnJumped = () => {
                     var verticalForce = Math.Min(swipeVelocity * VerticalForceCoefficient, MaxVerticalForce);
                     _rb.AddForce(new Vector2(0, verticalForce), ForceMode2D.Impulse);
@@ -77,11 +87,17 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     public void OnPushed() {
-        _doOnPushed();
+        if (_doOnPushed != null) {
+            _doOnPushed();
+        }
+        _doOnPushed = null;
     }
 
     public void OnJumped() {
-        _doOnJumped();
+        if (_doOnJumped != null) {
+            _doOnJumped();
+        }
+        _doOnJumped = null;
     }
 
     public void OnGrounded() {

@@ -18,17 +18,18 @@ public class SwipesDelegate {
         return SwipeDirection.Left;
     }
 
-    private const float SwipeIdleMagnitude = 20;
+    private const float SwipeIdleMagnitude = 10;
     private const float SwipeActionMagnitude = 100;
-    private const float DefaultSwipeVelocity = 800;
-    private readonly Action<SwipeDirection, float> _handleSwipe;
+    private readonly Action<SwipeDirection> _handleSwipeStart;
+    private readonly Action<SwipeDirection, float> _handleSwipeEnd;
     private TouchesDelegate _touches;
     private Vector2? _startTouch;
     private float _startTime;
     private SwipeDirection? _swipeDirection;
 
-    public SwipesDelegate(Action<SwipeDirection, float> handleSwipe) {
-        _handleSwipe = handleSwipe;
+    public SwipesDelegate(Action<SwipeDirection> handleSwipeStart, Action<SwipeDirection, float> handleSwipeEnd) {
+        _handleSwipeStart = handleSwipeStart;
+        _handleSwipeEnd = handleSwipeEnd;
     }
     
     // Use this for initialization
@@ -43,16 +44,40 @@ public class SwipesDelegate {
 
         // Handle keyboard input
         if (Input.GetKeyDown(KeyCode.W)) {
-            _handleSwipe(SwipeDirection.Top, DefaultSwipeVelocity);
+            _startTime = Time.time;
+            _handleSwipeStart(SwipeDirection.Top);
+        }
+        else if (Input.GetKeyUp(KeyCode.W)) {
+            var swipeTime = Time.time - _startTime;
+            var swipeVelocity = SwipeActionMagnitude / swipeTime;
+            _handleSwipeEnd(SwipeDirection.Top, swipeVelocity);
         }
         else if (Input.GetKeyDown(KeyCode.A)) {
-            _handleSwipe(SwipeDirection.Right, DefaultSwipeVelocity);
+            _startTime = Time.time;
+            _handleSwipeStart(SwipeDirection.Right);
+        }
+        else if (Input.GetKeyUp(KeyCode.A)) {
+            var swipeTime = Time.time - _startTime;
+            var swipeVelocity = SwipeActionMagnitude / swipeTime;
+            _handleSwipeEnd(SwipeDirection.Right, swipeVelocity);
         }
         else if (Input.GetKeyDown(KeyCode.S)) {
-            _handleSwipe(SwipeDirection.Bottom, DefaultSwipeVelocity);
+            _startTime = Time.time;
+            _handleSwipeStart(SwipeDirection.Bottom);
+        }
+        else if (Input.GetKeyUp(KeyCode.S)) {
+            var swipeTime = Time.time - _startTime;
+            var swipeVelocity = SwipeActionMagnitude / swipeTime;
+            _handleSwipeEnd(SwipeDirection.Bottom, swipeVelocity);
         }
         else if (Input.GetKeyDown(KeyCode.D)) {
-            _handleSwipe(SwipeDirection.Left, DefaultSwipeVelocity);
+            _startTime = Time.time;
+            _handleSwipeStart(SwipeDirection.Left);
+        }
+        else if (Input.GetKeyUp(KeyCode.D)) {
+            var swipeTime = Time.time - _startTime;
+            var swipeVelocity = SwipeActionMagnitude / swipeTime;
+            _handleSwipeEnd(SwipeDirection.Left, swipeVelocity);
         }
     }
 
@@ -71,12 +96,13 @@ public class SwipesDelegate {
         if (swipeMagnitude >= SwipeActionMagnitude && _swipeDirection != null) {
             var swipeTime = Time.time - _startTime;
             var swipeVelocity = swipeMagnitude / swipeTime;
-            _handleSwipe((SwipeDirection) _swipeDirection, swipeVelocity);
+            _handleSwipeEnd((SwipeDirection) _swipeDirection, swipeVelocity);
             OnTouchFinished();
         }
         else if (swipeMagnitude >= SwipeIdleMagnitude) {
             if (_swipeDirection == null) {
                 _swipeDirection = GetDirection(swipe);
+                _handleSwipeStart((SwipeDirection) _swipeDirection);
             }
             else {
                 if (GetDirection(swipe) != _swipeDirection) {

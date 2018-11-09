@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c894ec9e-e4bc-4a46-b0ad-7f0089b423fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skateboarder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skateboarder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Clips/Ground.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Clips/Ground.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Controllers/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Controllers/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +18,11 @@
     <session id="70240768">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -33,12 +37,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="2575" />
+          <entry key="cs" value="2988" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="2575" />
+          <entry key="C#" value="2988" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -53,7 +57,6 @@
               <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
               <folding>
                 <marker date="1541143991955" expanded="false" signature="6:32" ph="..." />
-                <marker date="1541143991955" expanded="true" signature="62:2922" ph="{...}" />
                 <marker date="1541143991955" expanded="true" signature="131:523" ph="{...}" />
                 <marker date="1541143991955" expanded="true" signature="244:296" ph="{...}" />
                 <marker date="1541143991955" expanded="true" signature="336:386" ph="{...}" />
@@ -82,11 +85,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/TouchesDelegate.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+            <state relative-caret-position="780">
+              <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
               <folding>
                 <marker date="1541447554975" expanded="false" signature="6:32" ph="..." />
-                <marker date="1541447554975" expanded="true" signature="63:1394" ph="{...}" />
                 <marker date="1541447554975" expanded="true" signature="376:503" ph="{...}" />
                 <marker date="1541447554975" expanded="true" signature="530:1391" ph="{...}" />
                 <marker date="1541447554975" expanded="true" signature="1129:1188" ph="{...}" />
@@ -100,21 +102,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-451">
-              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            <state relative-caret-position="140">
+              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
               <folding>
-                <marker date="1541441046312" expanded="true" signature="6:32" ph="..." />
-                <marker date="1541441046312" expanded="true" signature="78:2749" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="595:898" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="965:1054" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="1088:1156" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="1189:1824" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="1907:2628" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="1941:2622" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="2063:2256" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="2401:2588" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="2657:2687" ph="{...}" />
-                <marker date="1541441046312" expanded="true" signature="2716:2746" ph="{...}" />
+                <marker date="1541746787622" expanded="false" signature="6:32" ph="..." />
+                <marker date="1541746787622" expanded="true" signature="78:2936" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="689:992" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="1059:1148" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="1182:1250" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="1283:1918" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2001:2732" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2035:2726" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2162:2355" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2505:2692" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2761:2791" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2820:2850" ph="{...}" />
+                <marker date="1541746787622" expanded="true" signature="2881:2933" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -129,7 +132,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TouchesDelegate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SwipeDirection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SwipesDelegate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72784E92-0600-42E9-BFFE-FD8240505C1B/c5/e53ccbd7/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -158,10 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -178,6 +176,10 @@
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
       </pane>
     </panes>
   </component>
@@ -224,11 +226,13 @@
       <updated>1541091915322</updated>
       <workItem from="1541091918261" duration="4920000" />
       <workItem from="1541331595943" duration="15533000" />
+      <workItem from="1541614183575" duration="2974000" />
+      <workItem from="1541746755660" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20453000" />
+    <option name="totallyTimeSpent" value="23459000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -241,11 +245,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18742369" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1910867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -260,6 +264,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -315,7 +320,6 @@
           <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
           <folding>
             <marker date="1541143991955" expanded="false" signature="6:32" ph="..." />
-            <marker date="1541143991955" expanded="true" signature="62:2922" ph="{...}" />
             <marker date="1541143991955" expanded="true" signature="131:523" ph="{...}" />
             <marker date="1541143991955" expanded="true" signature="244:296" ph="{...}" />
             <marker date="1541143991955" expanded="true" signature="336:386" ph="{...}" />
@@ -342,11 +346,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/TouchesDelegate.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        <state relative-caret-position="780">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
           <folding>
             <marker date="1541447554975" expanded="false" signature="6:32" ph="..." />
-            <marker date="1541447554975" expanded="true" signature="63:1394" ph="{...}" />
             <marker date="1541447554975" expanded="true" signature="376:503" ph="{...}" />
             <marker date="1541447554975" expanded="true" signature="530:1391" ph="{...}" />
             <marker date="1541447554975" expanded="true" signature="1129:1188" ph="{...}" />
@@ -358,22 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-451">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <marker date="1541441046312" expanded="true" signature="6:32" ph="..." />
-            <marker date="1541441046312" expanded="true" signature="78:2749" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="595:898" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="965:1054" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="1088:1156" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="1189:1824" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="1907:2628" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="1941:2622" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="2063:2256" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="2401:2588" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="2657:2687" ph="{...}" />
-            <marker date="1541441046312" expanded="true" signature="2716:2746" ph="{...}" />
-          </folding>
+        <state relative-caret-position="140">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
         </state>
       </provider>
     </entry>

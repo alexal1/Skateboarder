@@ -3,6 +3,8 @@ using System;
 
 public class PlayerMovement : MonoBehaviour {
 
+    private const string TriggerPush = "Push";
+    private const string TriggerJump = "Jump";
     private const float HorizontalForceCoefficient = 0.01f;
     private const float VerticalForceCoefficient = 0.01f;
     private const float Tolerance = 0.0001f;
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void UpdateFlags() {
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, 3.0f, GroundLayerMask);
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, 8.0f, GroundLayerMask);
 
         var isFalling = _rb.velocity.y < 0;
         var isGroundDetected = hit.collider != null;
@@ -55,7 +57,7 @@ public class PlayerMovement : MonoBehaviour {
     private void HandleSwipe(SwipeDirection swipeDirection, float swipeVelocity) {
         switch (swipeDirection) {
             case SwipeDirection.Left:
-                _animator.SetTrigger("Push");
+                _animator.SetTrigger(TriggerPush);
                 _doOnPushed = () => {
                     var horizontalForce = swipeVelocity * HorizontalForceCoefficient;
                     _rb.AddForce(new Vector2(horizontalForce, 0), ForceMode2D.Impulse);
@@ -63,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
                 break;
 
             case SwipeDirection.Top:
-                _animator.SetTrigger("Jump");
+                _animator.SetTrigger(TriggerJump);
                 _doOnJumped = () => {
                     var verticalForce = swipeVelocity * VerticalForceCoefficient;
                     _rb.AddForce(new Vector2(0, verticalForce), ForceMode2D.Impulse);
@@ -78,6 +80,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public void OnJumped() {
         _doOnJumped();
+    }
+
+    public void OnGrounded() {
+        _animator.ResetTrigger(TriggerJump);
     }
 
 }

@@ -3,7 +3,7 @@
 public class DecorationMovement : MonoBehaviour {
 
 	private const float MaxVelocity = 4f;
-	private const float Acceleration = 0.0005f;
+	private const float Acceleration = 0.001f;
 	private const int TilesCount = 2;
 	private Camera _camera;
 	private float _velocity = 0.1f;

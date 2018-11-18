@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c894ec9e-e4bc-4a46-b0ad-7f0089b423fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skateboarder/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skateboarder/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skateboarder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skateboarder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackgroundMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackgroundMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraInterpolator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraInterpolator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/boom_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/boom_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/boom_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/boom_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/boom_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/boom_3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_face_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_face_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_face_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/container_face_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/grass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/grass.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/ground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/ground.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/kicker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/kicker.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/platform_test.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/platform_test.gif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/sprite18-sheet0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/sprite18-sheet0.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/sprite8-sheet0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/sprite8-sheet0.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/stairs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/stairs.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/street.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Decorator's pack/street.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/Ground.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Ground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/Ground.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Ground.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/box.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/box.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/wall.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/wall.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,12 +35,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="9029" />
+          <entry key="cs" value="9069" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="9029" />
+          <entry key="C#" value="9069" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -112,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraInterpolator.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
                 <marker date="1542468743525" expanded="true" signature="52:640" ph="{...}" />
                 <marker date="1542468743525" expanded="true" signature="287:636" ph="{...}" />
@@ -123,27 +77,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="879">
-              <caret line="39" column="73" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
+            <state relative-caret-position="120">
+              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
               <folding>
-                <marker date="1542490480179" expanded="true" signature="68:1325" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="406:775" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="435:484" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="829:1099" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="868:905" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="905:953" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="1135:1244" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="1168:1203" ph="{...}" />
-                <marker date="1542490480179" expanded="true" signature="1282:1322" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="68:1325" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="406:775" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="435:484" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="829:1099" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="868:905" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="905:953" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="1135:1244" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="1168:1203" ph="{...}" />
+                <marker date="1542528740444" expanded="true" signature="1282:1322" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/BoundedCameraInterpolator.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -196,9 +150,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraLimiter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DecorationToCameraAttaching.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BoundedCameraInterpolator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraInterpolator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs" />
       </list>
     </option>
   </component>
@@ -288,12 +242,12 @@
       <workItem from="1542227387802" duration="3111000" />
       <workItem from="1542291235809" duration="7628000" />
       <workItem from="1542377750836" duration="1474000" />
-      <workItem from="1542443072360" duration="10576000" />
+      <workItem from="1542443072360" duration="11323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76208000" />
+    <option name="totallyTimeSpent" value="76955000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,45 +391,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="879">
-          <caret line="39" column="73" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
-          <folding>
-            <marker date="1542490480179" expanded="true" signature="68:1325" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="406:775" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="435:484" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="829:1099" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="868:905" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="905:953" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="1135:1244" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="1168:1203" ph="{...}" />
-            <marker date="1542490480179" expanded="true" signature="1282:1322" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraInterpolator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
             <marker date="1542468743525" expanded="true" signature="52:640" ph="{...}" />
             <marker date="1542468743525" expanded="true" signature="287:636" ph="{...}" />
             <marker date="1542468743525" expanded="true" signature="421:493" ph="{...}" />
             <marker date="1542468743525" expanded="true" signature="586:613" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-          <folding>
-            <marker date="1542490480183" expanded="true" signature="64:825" ph="{...}" />
-            <marker date="1542490480183" expanded="true" signature="246:365" ph="{...}" />
-            <marker date="1542490480183" expanded="true" signature="420:822" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -492,6 +416,36 @@
             <marker date="1542490141198" expanded="true" signature="774:967" ph="{...}" />
             <marker date="1542490141198" expanded="true" signature="847:878" ph="{...}" />
             <marker date="1542490141198" expanded="true" signature="914:946" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding>
+            <marker date="1542490480183" expanded="true" signature="64:825" ph="{...}" />
+            <marker date="1542490480183" expanded="true" signature="246:365" ph="{...}" />
+            <marker date="1542490480183" expanded="true" signature="420:822" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DecorationMovement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+          <folding>
+            <marker date="1542528740444" expanded="true" signature="68:1325" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="406:775" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="435:484" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="829:1099" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="868:905" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="905:953" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="1135:1244" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="1168:1203" ph="{...}" />
+            <marker date="1542528740444" expanded="true" signature="1282:1322" ph="{...}" />
           </folding>
         </state>
       </provider>

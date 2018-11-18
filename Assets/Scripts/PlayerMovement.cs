@@ -104,4 +104,10 @@ public class PlayerMovement : MonoBehaviour {
         _animator.ResetTrigger(TriggerJump);
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Coin")) {
+            Destroy(other.gameObject);
+        }
+    }
+
 }

@@ -21,6 +21,7 @@
           <e p="CameraInterpolator.cs" t="Include" />
           <e p="CameraMovement.cs" t="Include" />
           <e p="DecorationMovement.cs" t="Include" />
+          <e p="DecorationToCameraAdjustment.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="RestartButton.cs" t="Include" />
           <e p="SwipeDirection.cs" t="Include" />

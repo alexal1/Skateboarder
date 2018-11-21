@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     private Animator _animator;
     private Action _doOnPushed;
     private Action _doOnJumped;
-    private SpriteRenderer _spriteRenderer;
-    private BoxCollider2D _collider;
+    private Collider2D _collider;
 
     // Use this for initialization
     private void Start() {
@@ -25,20 +24,14 @@ public class PlayerMovement : MonoBehaviour {
         _swipes.Start();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        _collider = gameObject.GetComponent<BoxCollider2D>();
+        _collider = gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     private void Update() {
         _swipes.Update();
         
-        AdjustBounds();
         UpdateFlags();
-    }
-
-    private void AdjustBounds() {
-        _collider.size = _spriteRenderer.sprite.bounds.size;
     }
 
     private void UpdateFlags() {

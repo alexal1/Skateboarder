@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour {
     private const float MaxHorizontalForce = 20f;
     private const float MaxVerticalForce= 20f;
     private const float Tolerance = 0.0001f;
-    private const int GroundLayerMask = 1 << 8;
     private SwipesDelegate _swipes;
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -35,11 +34,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void UpdateFlags() {
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, 8.0f, GroundLayerMask);
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, 8.0f, Config.ForegroundLayerMask);
 
         var isFalling = _rb.velocity.y < 0;
         var isGroundDetected = hit.collider != null;
-        var isGrounded = _collider.IsTouchingLayers(GroundLayerMask);
+        var isGrounded = _collider.IsTouchingLayers(Config.ForegroundLayerMask);
         var isStopped = Math.Abs(_rb.velocity.x) < Tolerance;
         
         _animator.SetBool("IsFalling", isFalling);

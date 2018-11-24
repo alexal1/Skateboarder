@@ -359,7 +359,7 @@ RectTransform:
   m_Children:
   - {fileID: 592501272}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -422,8 +422,8 @@ GameObject:
   - component: {fileID: 221628190}
   - component: {fileID: 221628192}
   - component: {fileID: 221628191}
-  m_Layer: 0
-  m_Name: Background
+  m_Layer: 10
+  m_Name: Railroad_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,11 +436,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 221628189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 871969856}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221628191
 MonoBehaviour:
@@ -450,9 +450,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 221628189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615a752b3793d4b5a8331e5dd00cbbf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 60e44e0f7829a476db7bd198a6d9d15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TilesCount: 2
+  MaxVelocity: 0.01
+  InitialVelocity: 0.01
+  Acceleration: 0
+  HeightMultiplier: 1
+  FollowCameraY: 1
 --- !u!212 &221628192
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -492,7 +498,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 13, y: 7.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -1115,8 +1121,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 221628190}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1828,7 +1833,7 @@ GameObject:
   - component: {fileID: 1498324099}
   - component: {fileID: 1498324098}
   m_Layer: 8
-  m_Name: Foreground
+  m_Name: Railroad_FG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,7 +1861,7 @@ Transform:
   - {fileID: 1628203320}
   - {fileID: 544124098}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!66 &1498324098
 CompositeCollider2D:
@@ -2392,7 +2397,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1564374740 stripped
 Transform:
@@ -2808,7 +2813,7 @@ Transform:
   - {fileID: 548134532}
   - {fileID: 520486473}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891504369
 GameObject:
@@ -2870,7 +2875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2086529708
 Prefab:
@@ -2928,8 +2933,8 @@ GameObject:
   - component: {fileID: 2143788545}
   - component: {fileID: 2143788544}
   - component: {fileID: 2143788543}
-  m_Layer: 0
-  m_Name: Middleground
+  m_Layer: 9
+  m_Name: Railroad_MG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2946,6 +2951,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e44e0f7829a476db7bd198a6d9d15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TilesCount: 2
+  MaxVelocity: 0.5
+  InitialVelocity: 0.1
+  Acceleration: 0.001
+  HeightMultiplier: 1.5
+  FollowCameraY: 0
 --- !u!212 &2143788544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3000,8 +3011,8 @@ Transform:
   m_GameObject: {fileID: 2143788542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

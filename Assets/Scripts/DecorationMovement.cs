@@ -2,33 +2,45 @@
 
 public class DecorationMovement : MonoBehaviour {
 
-	private const float MaxVelocity = 4f;
-	private const float Acceleration = 0.001f;
-	private const int TilesCount = 2;
+	public int TilesCount;
+	public float MaxVelocity;
+	public float InitialVelocity;
+	public float Acceleration;
+	public float HeightMultiplier;
+	public bool FollowCameraY;
+
 	private Camera _camera;
-	private float _velocity = 0.1f;
+	private float _velocity;
 	private float _width;
 	private float _currentStep;
 	private float _maxOffset;
 	private float _currentOffset;
 
-	// Use this for initialization
-	void Start () {
+	void Awake() {
 		if (Camera.main == null) {
 			Debug.Log("Camera is null!");
 			return;
 		}
 		_camera = Camera.main;
 		
-		var spriteRenderer = GetComponent<SpriteRenderer>();
-		_width = spriteRenderer.size.x * transform.localScale.x;
+		var cameraHeight = _camera.orthographicSize * 2;
+		var cameraWidth = cameraHeight * Screen.width / Screen.height;
+
+		_velocity = InitialVelocity;
 		
-		spriteRenderer.size = new Vector2(spriteRenderer.size.x * TilesCount, spriteRenderer.size.y);
-		_maxOffset = _width * (TilesCount - 1) / 2f;
+		var spriteRenderer = GetComponent<SpriteRenderer>();
+		var spriteHeight = spriteRenderer.size.y;
+		var spriteWidth = spriteRenderer.size.x;
+		spriteRenderer.size = new Vector2(spriteWidth * TilesCount, spriteHeight);
+		
+		var localScale = cameraHeight * HeightMultiplier / spriteHeight;
+		transform.localScale = new Vector3(localScale, localScale, localScale);
+
+		_width = cameraWidth * TilesCount;
+		_maxOffset = cameraWidth * (TilesCount - 1) / 2f * HeightMultiplier;
 	}
 	
-	// Update is called once per frame
-	void Update() {
+	void LateUpdate() {
 		if (_currentOffset <= -_maxOffset) {
 			_currentOffset = _maxOffset;
 		}
@@ -37,7 +49,9 @@ public class DecorationMovement : MonoBehaviour {
 		}
 		
 		var cameraX = _camera.transform.position.x;
-		transform.position = new Vector3(cameraX + _currentOffset, 0, 0);
+		var decorationX = cameraX + _currentOffset;
+		var decorationY = FollowCameraY ? _camera.transform.position.y : transform.position.y;
+		transform.position = new Vector3(decorationX, decorationY, transform.position.z);
 		
 		IncrementVelocity();
 	}

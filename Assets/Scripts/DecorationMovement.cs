@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class DecorationMovement : MonoBehaviour {
 
@@ -7,14 +8,15 @@ public class DecorationMovement : MonoBehaviour {
 	public float InitialVelocity;
 	public float Acceleration;
 	public float HeightMultiplier;
-	public bool FollowCameraY;
 
 	private Camera _camera;
+	private float _maxCameraOffsetY;
 	private float _velocity;
-	private float _width;
 	private float _currentStep;
-	private float _maxOffset;
 	private float _currentOffset;
+	private float _spriteWidth;
+	private float _startOffset;
+	private float _endOffset;
 
 	void Awake() {
 		if (Camera.main == null) {
@@ -36,22 +38,28 @@ public class DecorationMovement : MonoBehaviour {
 		var localScale = cameraHeight * HeightMultiplier / spriteHeight;
 		transform.localScale = new Vector3(localScale, localScale, localScale);
 
-		_width = cameraWidth * TilesCount;
-		_maxOffset = cameraWidth * (TilesCount - 1) / 2f * HeightMultiplier;
+		_spriteWidth = spriteWidth * TilesCount * localScale;
+
+		_maxCameraOffsetY = (HeightMultiplier - 1f) * cameraHeight / 2f;
+		
+		_startOffset = (_spriteWidth - cameraWidth) / 2f;
+		_endOffset = _spriteWidth * 2f / TilesCount - (_spriteWidth + cameraWidth) / 2f;
 	}
 	
 	void LateUpdate() {
-		if (_currentOffset <= -_maxOffset) {
-			_currentOffset = _maxOffset;
+		if (_currentOffset - _currentStep < _endOffset) {
+			_currentOffset = _startOffset;
 		}
 		else {
 			_currentOffset -= _currentStep;
 		}
 		
 		var cameraX = _camera.transform.position.x;
-		var decorationX = cameraX + _currentOffset;
-		var decorationY = FollowCameraY ? _camera.transform.position.y : transform.position.y;
-		transform.position = new Vector3(decorationX, decorationY, transform.position.z);
+		var spriteX = cameraX + _currentOffset;
+		var spriteY = transform.position.y;
+		spriteY = Math.Max(spriteY, _camera.transform.position.y - _maxCameraOffsetY);
+		spriteY = Math.Min(spriteY, _camera.transform.position.y + _maxCameraOffsetY);
+		transform.position = new Vector3(spriteX, spriteY, transform.position.z);
 		
 		IncrementVelocity();
 	}
@@ -64,7 +72,7 @@ public class DecorationMovement : MonoBehaviour {
 	}
 	
 	private float GetStepByVelocity() {
-		return _width * _velocity / 100f;
+		return _spriteWidth * _velocity / 100f;
 	}
 
 }

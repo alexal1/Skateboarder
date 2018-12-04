@@ -9,7 +9,7 @@ public class CameraInterpolator {
 	private float _cameraY;
 	private float _step;
 
-	public virtual float GetCameraY(float groundY) {
+	public float GetCameraY(float groundY) {
 		var groundDelta = Mathf.Abs(groundY - _groundY);
 		var desiredCameraY = groundY + CameraOffset;
 		

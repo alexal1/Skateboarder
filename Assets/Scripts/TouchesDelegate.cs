@@ -33,8 +33,12 @@ public class TouchesDelegate {
             case TouchPhase.Moved:
                 _onTouchMoved(touch.position);
                 break;
-
-            default:
+            
+            case TouchPhase.Ended:
+                _onTouchFinished();
+                break;
+            
+            case TouchPhase.Canceled:
                 _onTouchFinished();
                 break;
         }

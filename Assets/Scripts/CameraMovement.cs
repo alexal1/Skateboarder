@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _player = GameObject.Find("Player").transform;
-	    _cameraInterpolator = new BoundedCameraInterpolator();
+	    _cameraInterpolator = new CameraInterpolator();
 	}
 	
 	// Update is called once per frame

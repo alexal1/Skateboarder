@@ -17,7 +17,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BoundedCameraInterpolator.cs" t="Include" />
           <e p="CameraInterpolator.cs" t="Include" />
           <e p="CameraMovement.cs" t="Include" />
           <e p="Config.cs" t="Include" />

@@ -18,18 +18,18 @@ public class SwipesDelegate {
         return SwipeDirection.Left;
     }
 
-    private const float SwipeIdleMagnitude = 10;
-    private const float SwipeActionMagnitude = 100;
-    private readonly Action<SwipeDirection> _handleSwipeStart;
-    private readonly Action<SwipeDirection, float> _handleSwipeEnd;
+    private const float SwipeIdleMagnitude = 1;
+    private const float SwipeDefaultMagnitude = 300;
+    private readonly Action<SwipeDirection, float> _onSwipeChanged;
+    private readonly Action<SwipeDirection, float> _onSwipeReleased;
     private TouchesDelegate _touches;
     private Vector2? _startTouch;
-    private float _startTime;
-    private SwipeDirection? _swipeDirection;
+    private SwipeDirection _swipeDirection;
+    private float _swipeMagnitude;
 
-    public SwipesDelegate(Action<SwipeDirection> handleSwipeStart, Action<SwipeDirection, float> handleSwipeEnd) {
-        _handleSwipeStart = handleSwipeStart;
-        _handleSwipeEnd = handleSwipeEnd;
+    public SwipesDelegate(Action<SwipeDirection, float> onSwipeChanged, Action<SwipeDirection, float> onSwipeReleased) {
+        _onSwipeChanged = onSwipeChanged;
+        _onSwipeReleased = onSwipeReleased;
     }
     
     // Use this for initialization
@@ -44,77 +44,55 @@ public class SwipesDelegate {
 
         // Handle keyboard input
         if (Input.GetKeyDown(KeyCode.W)) {
-            _startTime = Time.time;
-            _handleSwipeStart(SwipeDirection.Top);
+            _onSwipeChanged(SwipeDirection.Bottom, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyUp(KeyCode.W)) {
-            var swipeTime = Time.time - _startTime;
-            var swipeVelocity = SwipeActionMagnitude / swipeTime;
-            _handleSwipeEnd(SwipeDirection.Top, swipeVelocity);
+            _onSwipeReleased(SwipeDirection.Bottom, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyDown(KeyCode.A)) {
-            _startTime = Time.time;
-            _handleSwipeStart(SwipeDirection.Right);
+            _onSwipeChanged(SwipeDirection.Left, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyUp(KeyCode.A)) {
-            var swipeTime = Time.time - _startTime;
-            var swipeVelocity = SwipeActionMagnitude / swipeTime;
-            _handleSwipeEnd(SwipeDirection.Right, swipeVelocity);
+            _onSwipeReleased(SwipeDirection.Left, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyDown(KeyCode.S)) {
-            _startTime = Time.time;
-            _handleSwipeStart(SwipeDirection.Bottom);
+            _onSwipeChanged(SwipeDirection.Top, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyUp(KeyCode.S)) {
-            var swipeTime = Time.time - _startTime;
-            var swipeVelocity = SwipeActionMagnitude / swipeTime;
-            _handleSwipeEnd(SwipeDirection.Bottom, swipeVelocity);
+            _onSwipeReleased(SwipeDirection.Top, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyDown(KeyCode.D)) {
-            _startTime = Time.time;
-            _handleSwipeStart(SwipeDirection.Left);
+            _onSwipeChanged(SwipeDirection.Right, SwipeDefaultMagnitude);
         }
         else if (Input.GetKeyUp(KeyCode.D)) {
-            var swipeTime = Time.time - _startTime;
-            var swipeVelocity = SwipeActionMagnitude / swipeTime;
-            _handleSwipeEnd(SwipeDirection.Left, swipeVelocity);
+            _onSwipeReleased(SwipeDirection.Right, SwipeDefaultMagnitude);
         }
     }
 
     private void OnTouchBegan(Vector2 position) {
         _startTouch = position;
-        _startTime = Time.time;
     }
 
     private void OnTouchMoved(Vector2 position) {
         if (_startTouch == null) {
             return;
         }
+        
         var swipe = position - (Vector2) _startTouch;
-        var swipeMagnitude = swipe.magnitude;
+        _swipeDirection = GetDirection(swipe);
+        _swipeMagnitude = swipe.magnitude;
 
-        if (swipeMagnitude >= SwipeActionMagnitude && _swipeDirection != null) {
-            var swipeTime = Time.time - _startTime;
-            var swipeVelocity = swipeMagnitude / swipeTime;
-            _handleSwipeEnd((SwipeDirection) _swipeDirection, swipeVelocity);
-            OnTouchFinished();
-        }
-        else if (swipeMagnitude >= SwipeIdleMagnitude) {
-            if (_swipeDirection == null) {
-                _swipeDirection = GetDirection(swipe);
-                _handleSwipeStart((SwipeDirection) _swipeDirection);
-            }
-            else {
-                if (GetDirection(swipe) != _swipeDirection) {
-                    OnTouchFinished();
-                }
-            }
+        if (_swipeMagnitude > SwipeIdleMagnitude) {
+            _onSwipeChanged(_swipeDirection, _swipeMagnitude);
         }
     }
 
     private void OnTouchFinished() {
         _startTouch = null;
-        _swipeDirection = null;
+
+        if (_swipeMagnitude > SwipeIdleMagnitude) {
+            _onSwipeReleased(_swipeDirection, _swipeMagnitude);
+        }
     }
 
 }

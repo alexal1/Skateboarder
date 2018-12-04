@@ -3,12 +3,9 @@ using System;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private const string TriggerPush = "Push";
-    private const string TriggerJump = "Jump";
-    private const float HorizontalForceCoefficient = 0.02f;
-    private const float VerticalForceCoefficient = 0.02f;
-    private const float MaxHorizontalForce = 20f;
-    private const float MaxVerticalForce= 20f;
+    private const float HorizontalForceCoefficient = 0.5f;
+    private const float VerticalForceCoefficient = 0.0625f;
+    private const float MaxVerticalForce= 25f;
     private const float Tolerance = 0.0001f;
     private SwipesDelegate _swipes;
     private Rigidbody2D _rb;
@@ -16,10 +13,11 @@ public class PlayerMovement : MonoBehaviour {
     private Action _doOnPushed;
     private Action _doOnJumped;
     private Collider2D _collider;
+    private bool _isGrounded;
 
     // Use this for initialization
     private void Start() {
-        _swipes = new SwipesDelegate(HandleSwipeStart, HandleSwipeEnd);
+        _swipes = new SwipesDelegate(OnSwipeChanged, OnSwipeReleased);
         _swipes.Start();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -28,9 +26,8 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        _swipes.Update();
-        
         UpdateFlags();
+        _swipes.Update();
     }
 
     private void UpdateFlags() {
@@ -38,62 +35,51 @@ public class PlayerMovement : MonoBehaviour {
 
         var isFalling = _rb.velocity.y < 0;
         var isGroundDetected = hit.collider != null;
-        var isGrounded = _collider.IsTouchingLayers(Config.ForegroundLayerMask);
+        _isGrounded = _collider.IsTouchingLayers(Config.ForegroundLayerMask);
         var isStopped = Math.Abs(_rb.velocity.x) < Tolerance;
         
         _animator.SetBool("IsFalling", isFalling);
         _animator.SetBool("IsGroundDetected", isGroundDetected);
-        _animator.SetBool("IsGrounded", isGrounded);
-        _animator.SetBool("IsFallingOrGrounded", isFalling || isGrounded);
+        _animator.SetBool("IsGrounded", _isGrounded);
+        _animator.SetBool("IsFallingOrGrounded", isFalling || _isGrounded);
         _animator.SetBool("IsStopped", isStopped);
     }
 
-    private void HandleSwipeStart(SwipeDirection swipeDirection) {
+    private void OnSwipeChanged(SwipeDirection swipeDirection, float swipeMagnitude) {
         switch (swipeDirection) {
-            case SwipeDirection.Left:
-                _animator.SetTrigger(TriggerPush);
+            case SwipeDirection.Right:
+                if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("PrePush")) {
+                    _animator.SetTrigger("PrePush");
+                }
                 break;
 
-            case SwipeDirection.Top:
-                _animator.SetTrigger(TriggerJump);
+            case SwipeDirection.Bottom:
+                if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("PreJump")) {
+                    _animator.SetTrigger("PreJump");
+                }
                 break;
         }
     }
 
-    private void HandleSwipeEnd(SwipeDirection swipeDirection, float swipeVelocity) {
+    private void OnSwipeReleased(SwipeDirection swipeDirection, float swipeMagnitude) {
         switch (swipeDirection) {
-            case SwipeDirection.Left:
-                _doOnPushed = () => {
-                    var horizontalForce = Math.Min(swipeVelocity * HorizontalForceCoefficient, MaxHorizontalForce);
+            case SwipeDirection.Right:
+                _animator.SetTrigger("Push");
+                if (_isGrounded) {
+                    var velocity = Mathf.Max(_rb.velocity.x, 10f);
+                    var horizontalForce = swipeMagnitude / velocity * HorizontalForceCoefficient;
                     _rb.AddForce(new Vector2(horizontalForce, 0), ForceMode2D.Impulse);
-                };
+                }
                 break;
 
-            case SwipeDirection.Top:
-                _doOnJumped = () => {
-                    var verticalForce = Math.Min(swipeVelocity * VerticalForceCoefficient, MaxVerticalForce);
+            case SwipeDirection.Bottom:
+                _animator.SetTrigger("Jump");
+                if (_isGrounded) {
+                    var verticalForce = Math.Min(swipeMagnitude * VerticalForceCoefficient, MaxVerticalForce);
                     _rb.AddForce(new Vector2(0, verticalForce), ForceMode2D.Impulse);
-                };
+                }
                 break;
         }
-    }
-
-    public void OnPushed() {
-        if (_doOnPushed != null) {
-            _doOnPushed();
-        }
-        _doOnPushed = null;
-    }
-
-    public void OnJumped() {
-        if (_doOnJumped != null) {
-            _doOnJumped();
-        }
-        _doOnJumped = null;
-    }
-
-    public void OnGrounded() {
-        _animator.ResetTrigger(TriggerJump);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
